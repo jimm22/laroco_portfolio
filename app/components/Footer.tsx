@@ -121,7 +121,7 @@ export default function Footer() {
               <span>•</span>
               made with{" "}
               <Heart className="w-4 h-4 inline text-red-500 fill-red-500 mx-1" />
-              using <span className="text-primary">Next.js</span> &
+              using <span className="text-primary">Next.js</span> &amp;
               <span className="text-secondary"> DaisyUI</span>
             </p>
           </aside>

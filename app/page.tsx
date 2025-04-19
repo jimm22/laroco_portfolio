@@ -8,6 +8,7 @@ import {
   Mail,
 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   const projects = [
@@ -38,10 +39,12 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
 
               <div className="relative z-10 w-78 h-78 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 overflow-hidden shadow-2xl group-hover:rotate-2 transition-transform duration-300">
-                <img
+                <Image
                   src="/jim-gleanify-profile.svg"
                   alt="SVG Icon"
-                  className="w-full h-full object-contain p-6"
+                  width={300}
+                  height={300}
+                  className="object-contain p-6"
                 />
               </div>
             </div>
@@ -50,7 +53,7 @@ export default function Home() {
           <div className="max-w-2xl">
             <h1 className="text-5xl font-bold">Jim Vincent Laroco</h1>
             <p className="py-6 text-xl text-base-content/80">
-              Hi! I’m Jim and I enjoy turning data into valuable insights
+              Hi! I&apos;m Jim and I enjoy turning data into valuable insights
               through data analytics. I also build modern frontend website
               designs with Next.js.
             </p>
@@ -93,13 +96,13 @@ export default function Home() {
                 >
                   <Mail className="w-5 h-5" />
                 </a>
-                <a
+                <Link
                   href="/"
                   className="btn btn-circle btn-ghost hover:bg-base-300 hover:scale-110 transition-all duration-300 tooltip"
                   data-tip="Website"
                 >
                   <Globe className="w-5 h-5" />
-                </a>
+                </Link>
               </div>
               <div className="mt-2 text-sm text-base-content/70">
                 Available for freelance work and collaborations
@@ -110,7 +113,7 @@ export default function Home() {
       </div>
 
       {/* Featured Projects */}
-      <section className="bg-base-200 mx-auto px-4 py-20 ">
+      <section className="bg-base-200 mx-auto px-4 py-20">
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <div className="inline-block px-6 py-2 rounded-full bg-primary/10 text-primary mb-4">
@@ -126,9 +129,11 @@ export default function Home() {
                 className="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
               >
                 <figure className="px-8 pt-8">
-                  <img
+                  <Image
                     src={project.image}
                     alt={project.title}
+                    width={500}
+                    height={200}
                     className="rounded-xl h-48 w-full object-cover"
                   />
                 </figure>
@@ -165,11 +170,11 @@ export default function Home() {
             Have an idea? Website to be built? Data to be analyzed? I’d love to
             help!
           </p>
-          <a href="/contact">
+          <Link href="/contact">
             <button className="btn btn-accent btn-lg rounded-full px-10 hover:scale-105 transition-transform duration-300">
               Contact Me
             </button>
-          </a>
+          </Link>
         </div>
       </section>
     </div>

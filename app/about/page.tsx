@@ -1,16 +1,5 @@
 // app/about/page.tsx
-import {
-  Code2,
-  BrainCircuit,
-  Rocket,
-  Palette,
-  Globe,
-  Award,
-  Briefcase,
-  GraduationCap,
-  Mic,
-  Eye,
-} from "lucide-react";
+import { BrainCircuit, Mic, Eye } from "lucide-react";
 
 export default function AboutPage() {
   const principles = [

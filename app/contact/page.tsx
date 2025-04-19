@@ -56,14 +56,14 @@ export default function ContactPage() {
         <div className="hero-content text-center">
           <div className="max-w-2xl">
             <h1 className="text-5xl font-bold mb-6">
-              Let's{" "}
+              Let&apos;s{" "}
               <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                 Connect
               </span>
             </h1>
             <p className="text-xl text-base-content/80">
-              Reach out through any of these channels - I'd love to hear from
-              you!
+              Reach out through any of these channels - I&apos;d love to hear
+              from you!
             </p>
           </div>
         </div>
