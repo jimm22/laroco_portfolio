@@ -121,7 +121,7 @@ export default function PassionsPage() {
                 </a>
                 <a href="/contact">
                   <button className="btn btn-outline rounded-full">
-                    Let's Connect
+                    Let&apos;s Connect
                   </button>
                 </a>
               </div>

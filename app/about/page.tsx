@@ -1,6 +1,6 @@
 // app/about/page.tsx
 import { BrainCircuit, Mic, Eye } from "lucide-react";
-
+import Image from "next/image";
 export default function AboutPage() {
   const principles = [
     {
@@ -46,11 +46,16 @@ export default function AboutPage() {
             <div className="w-full lg:w-1/2 flex justify-center">
               <div className="relative group hover:scale-105 transition-transform duration-300">
                 <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
-                <img
-                  src="/jimhomeprofile.webp"
-                  alt="Jim Vincent Laroco"
-                  className="relative z-10 w-96 h-96 object-cover rounded-2xl shadow-2xl group-hover:rotate-2 transition-transform duration-300"
-                />
+                <div className="relative z-10 w-96 h-96 rounded-2xl overflow-hidden shadow-2xl group-hover:rotate-2 transition-transform duration-300">
+                  <Image
+                    src="/jimhomeprofile.webp"
+                    alt="Jim Vincent Laroco"
+                    fill
+                    className="object-cover rounded-2xl"
+                    sizes="(max-width: 768px) 100vw, 384px"
+                    priority
+                  />
+                </div>
               </div>
             </div>
           </div>

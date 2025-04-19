@@ -1,6 +1,6 @@
-// app/components/Footer.tsx
 "use client";
 
+import Link from "next/link";
 import { Linkedin, Github, Mail, Globe, Heart, Facebook } from "lucide-react";
 
 export default function Footer() {
@@ -28,34 +28,34 @@ export default function Footer() {
               Explore
             </h3>
             <div className="grid grid-cols-2 gap-x-8 gap-y-3">
-              <a
+              <Link
                 href="/"
                 className="link link-hover hover:text-primary transition-colors duration-200 flex items-center gap-1"
               >
                 <span className="w-1 h-1 rounded-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                 Home
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/about"
                 className="link link-hover hover:text-primary transition-colors duration-200 flex items-center gap-1"
               >
                 <span className="w-1 h-1 rounded-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                 About
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/portfolio"
                 className="link link-hover hover:text-primary transition-colors duration-200 flex items-center gap-1"
               >
                 <span className="w-1 h-1 rounded-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                 Portfolio
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/contact"
                 className="link link-hover hover:text-primary transition-colors duration-200 flex items-center gap-1"
               >
                 <span className="w-1 h-1 rounded-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                 Contact
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -99,13 +99,13 @@ export default function Footer() {
               >
                 <Mail className="w-5 h-5" />
               </a>
-              <a
+              <Link
                 href="/"
                 className="btn btn-circle btn-ghost hover:bg-base-300 hover:scale-110 transition-all duration-300 tooltip"
                 data-tip="Website"
               >
                 <Globe className="w-5 h-5" />
-              </a>
+              </Link>
             </div>
             <div className="mt-2 text-sm text-base-content/70">
               Available for freelance work and collaborations
@@ -113,7 +113,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Copyright Section */}
+        {/* Copyright */}
         <div className="border-t border-base-300 mt-12 pt-8 text-center w-full">
           <aside>
             <p className="text-base-content/80 flex items-center justify-center gap-1">
