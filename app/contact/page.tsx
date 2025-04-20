@@ -1,4 +1,3 @@
-// app/contact/page.tsx
 "use client";
 
 import { Linkedin, Github, Facebook, Mail, Globe, Phone } from "lucide-react";
@@ -6,46 +5,46 @@ import { Linkedin, Github, Facebook, Mail, Globe, Phone } from "lucide-react";
 export default function ContactPage() {
   const contacts = [
     {
-      icon: <Linkedin className="w-6 h-6" />,
+      icon: Linkedin,
       platform: "LinkedIn",
       handle: "jim-vincent-laroco",
       url: "https://www.linkedin.com/in/jim-vincent-laroco-86a10b272/",
-      color: "bg-blue-600/10 text-blue-600",
+      color: "text-sky-600 bg-sky-100",
     },
     {
-      icon: <Github className="w-6 h-6" />,
+      icon: Github,
       platform: "GitHub",
       handle: "jimm22",
       url: "https://github.com/jimm22",
-      color: "bg-gray-800/10 text-gray-800",
+      color: "text-neutral-800 bg-neutral-100",
     },
     {
-      icon: <Facebook className="w-6 h-6" />,
+      icon: Facebook,
       platform: "Facebook",
       handle: "larocojim",
       url: "https://www.facebook.com/larocojim",
-      color: "bg-blue-800/10 text-blue-800",
+      color: "text-indigo-700 bg-indigo-100",
     },
     {
-      icon: <Mail className="w-6 h-6" />,
+      icon: Mail,
       platform: "Email",
       handle: "jimvincentlaroco@gmail.com",
       url: "mailto:jimvincentlaroco@gmail.com",
-      color: "bg-red-500/10 text-red-500",
+      color: "text-rose-600 bg-rose-100",
     },
     {
-      icon: <Globe className="w-6 h-6" />,
+      icon: Globe,
       platform: "Website",
       handle: "jimlaroco.com",
       url: "/",
-      color: "bg-green-600/10 text-green-600",
+      color: "text-emerald-600 bg-emerald-100",
     },
     {
-      icon: <Phone className="w-6 h-6" />,
+      icon: Phone,
       platform: "Phone",
-      handle: "+1 (123) 456-7890", // Replace with your actual number
+      handle: "(+63) 999-929-4824",
       url: "tel:+11234567890",
-      color: "bg-purple-600/10 text-purple-600",
+      color: "text-violet-600 bg-violet-100",
     },
   ];
 
@@ -62,8 +61,8 @@ export default function ContactPage() {
               </span>
             </h1>
             <p className="text-xl text-base-content/80">
-              Reach out through any of these channels - I&apos;d love to hear
-              from you!
+              Reach out through any of these platforms. I`&apos;m always open to
+              chat!
             </p>
           </div>
         </div>
@@ -72,59 +71,33 @@ export default function ContactPage() {
       {/* Contact Cards */}
       <section className="container mx-auto px-4 py-16">
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {contacts.map((contact, index) => (
-            <a
-              key={index}
-              href={contact.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`card ${contact.color} shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2`}
-            >
-              <div className="card-body items-center text-center">
-                <div
-                  className={`p-4 rounded-full ${contact.color.replace(
-                    "/10",
-                    "/20"
-                  )} mb-4`}
-                >
-                  {contact.icon}
+          {contacts.map((contact, index) => {
+            const Icon = contact.icon;
+            return (
+              <a
+                key={index}
+                href={contact.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card bg-base border border-base-200 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+              >
+                <div className="card-body items-center text-center">
+                  <div className={`p-4 rounded-full ${contact.color} mb-4`}>
+                    <Icon className="w-6 h-6" />
+                  </div>
+                  <h3 className="card-title text-2xl mb-1">
+                    {contact.platform}
+                  </h3>
+                  <p className="text-base-content/80">{contact.handle}</p>
+                  <div className="mt-4">
+                    <span className="text-sm font-medium px-3 py-1 rounded-full bg-base-200">
+                      {contact.platform === "Phone" ? "Call me" : "Contact me"}
+                    </span>
+                  </div>
                 </div>
-                <h3 className="card-title text-2xl mb-1">{contact.platform}</h3>
-                <p className="text-base-content/80">{contact.handle}</p>
-                <div className="mt-4">
-                  <span className="text-sm font-medium px-3 py-1 rounded-full bg-base-100">
-                    {contact.platform === "Phone" ? "Call me" : "Contact me"}
-                  </span>
-                </div>
-              </div>
-            </a>
-          ))}
-        </div>
-      </section>
-
-      {/* Quick Contact */}
-      <section className="container mx-auto px-4 pb-16 max-w-3xl">
-        <div className="card bg-base-100 shadow-lg">
-          <div className="card-body items-center text-center">
-            <h2 className="card-title text-3xl mb-4">Quick Links</h2>
-            <div className="flex flex-wrap justify-center gap-4">
-              {contacts.map((contact, index) => (
-                <a
-                  key={index}
-                  href={contact.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`btn btn-ghost ${contact.color.replace(
-                    "/10",
-                    "/20"
-                  )} hover:${contact.color.replace("/10", "/20")} gap-2`}
-                >
-                  {contact.icon}
-                  {contact.platform}
-                </a>
-              ))}
-            </div>
-          </div>
+              </a>
+            );
+          })}
         </div>
       </section>
     </div>

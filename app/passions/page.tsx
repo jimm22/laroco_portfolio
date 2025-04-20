@@ -1,8 +1,8 @@
-// app/passions/page.tsx
 "use client";
 
-import { Video, Paintbrush, ChartBar, Film, Gamepad2 } from "lucide-react";
+import { Video, Paintbrush, ChartBar, Film, BookText } from "lucide-react";
 import Image from "next/image";
+
 export default function PassionsPage() {
   const passionCards = [
     {
@@ -32,9 +32,9 @@ export default function PassionsPage() {
       color: "bg-info/10 text-info",
     },
     {
-      icon: <Gamepad2 className="w-8 h-8" />,
-      title: "Playing Video Games",
-      description: "Exploring virtual worlds and gaming culture.",
+      icon: <BookText className="w-8 h-8" />,
+      title: "Reading",
+      description: "Exploring ideas, narratives, and cultures through books.",
       color: "bg-success/10 text-success",
     },
   ];
@@ -42,8 +42,8 @@ export default function PassionsPage() {
   return (
     <div className="min-h-screen bg-base-100">
       {/* Hero Section */}
-      <section className="hero py-16 bg-gradient-to-br from-primary/10 to-secondary/10">
-        <div className="hero-content text-center">
+      <section className="hero py-16 bg-gradient-to-br from-primary/10 to-secondary/10 ">
+        <div className="hero-content text-center animate-fadeIn">
           <div className="max-w-2xl">
             <h1 className="text-5xl font-bold mb-6">
               My{" "}
@@ -59,13 +59,17 @@ export default function PassionsPage() {
         </div>
       </section>
 
-      {/* Passions Section - All in One Row with Wrapping */}
+      {/* Passions Section */}
       <section className="container mx-auto px-4 py-16">
         <div className="flex flex-wrap justify-center gap-8">
           {passionCards.map((passion, index) => (
             <div
               key={index}
-              className={`card ${passion.color} w-[400px] shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2`}
+              className={`card ${passion.color} w-[400px] shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 animate-fadeIn`}
+              style={{
+                animationDelay: `${index * 100}ms`,
+                animationFillMode: "both",
+              }}
             >
               <div className="card-body items-center text-center">
                 <div
@@ -88,10 +92,10 @@ export default function PassionsPage() {
       <section className="bg-base-200 py-16">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-12">
-            <div className="lg:w-1/2">
+            <div className="lg:w-1/2 animate-fadeIn">
               <div className="aspect-video rounded-2xl overflow-hidden shadow-xl relative">
                 <Image
-                  src="/jim-studying-shot.png" // update with your actual image path
+                  src="/jim-studying-shot.png"
                   alt="Personal Journey"
                   fill
                   className="object-cover"
@@ -99,7 +103,7 @@ export default function PassionsPage() {
                 />
               </div>
             </div>
-            <div className="lg:w-1/2 space-y-6">
+            <div className="lg:w-1/2 space-y-6 animate-fadeIn delay-100">
               <h2 className="text-4xl font-bold">
                 How My Passions Shape My Work
               </h2>
@@ -110,8 +114,8 @@ export default function PassionsPage() {
               </p>
               <p className="text-lg text-base-content/80">
                 Video editing and filmmaking sharpen my storytelling skills, and
-                gaming keeps me curious, analytical, and immersed in interactive
-                experiences.
+                reading encourages reflection, empathy, and continuous
+                learning—qualities that translate into everything I build.
               </p>
               <div className="mt-6 flex gap-4 justify-start">
                 <a href="/portfolio">
@@ -131,7 +135,7 @@ export default function PassionsPage() {
       </section>
 
       {/* Inspirational Quote */}
-      <section className="container mx-auto px-4 py-16 text-center">
+      <section className="container mx-auto px-4 py-16 text-center animate-fadeIn">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-semibold text-base-content/80 mb-4">
             Embrace what excites you and make it yours.

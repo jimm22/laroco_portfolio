@@ -1,6 +1,7 @@
 // app/about/page.tsx
 import { BrainCircuit, Mic, Eye } from "lucide-react";
 import Image from "next/image";
+
 export default function AboutPage() {
   const principles = [
     {
@@ -19,6 +20,30 @@ export default function AboutPage() {
       title: "Attention to Detail",
       description:
         "I focus on the little things that make a big impact in both design and data.",
+    },
+  ];
+
+  const timeline = [
+    {
+      year: "2025 - Present",
+      title: "SEO Specialist",
+      company: "SEO Echelon",
+      description:
+        "Optimize websites for search engines by improving content strategy, keyword rankings, and on-page SEO to drive organic traffic and enhance online visibility.",
+    },
+    {
+      year: "2024 - Present",
+      title: "Transcriber/ Translator",
+      company: "KMJS - GMA Public Affairs",
+      description:
+        "Provides transcription and translation services for KMJS segments.",
+    },
+    {
+      year: "2022",
+      title: "Video Editor",
+      company: "Freelance",
+      description:
+        "Edited and produced short form video content for various clients that is aligned with their vision and branding.",
     },
   ];
 
@@ -100,43 +125,38 @@ export default function AboutPage() {
 
           <div className="flex justify-center">
             <div className="relative pl-8 border-l-2 border-primary/20 max-w-4xl mx-auto">
-              {[
-                {
-                  year: "2022",
-                  title: "Video Editor",
-                  company: "Freelance",
-                  description:
-                    "Edited and produced short form video content for various clients that is aligned with their vision and branding.",
-                },
-                {
-                  year: "2024 - Present",
-                  title: "Transcriber/ Translator",
-                  company: "KMJS - GMA Public Affairs",
-                  description:
-                    "Provides transcription and translation services for KMJS segments.",
-                },
-                {
-                  year: "2025 - Present",
-                  title: "SEO Specialist",
-                  company: "SEO Echelon",
-                  description:
-                    "Optimize websites for search engines by improving content strategy, keyword rankings, and on-page SEO to drive organic traffic and enhance online visibility.",
-                },
-              ].map((item, index) => (
-                <div
-                  key={index}
-                  className="relative mb-12 pl-8 opacity-0 animate-fadeIn"
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
-                  <div className="absolute w-4 h-4 bg-primary rounded-full -left-[10px] top-2 border-2 border-base-100" />
-                  <div className="text-primary/80 mb-2">{item.year}</div>
-                  <h3 className="text-2xl font-semibold mb-1">{item.title}</h3>
-                  <div className="text-lg text-primary mb-2">
-                    {item.company}
+              {timeline.map((item, index) => {
+                const maxCircleSize = 24; // in pixels
+                const minCircleSize = 12;
+                const step =
+                  (maxCircleSize - minCircleSize) / (timeline.length - 1);
+                const circleSize = maxCircleSize - index * step;
+
+                return (
+                  <div
+                    key={index}
+                    className="relative mb-12 pl-8 opacity-0 animate-fadeIn"
+                    style={{ animationDelay: `${index * 100}ms` }}
+                  >
+                    <div
+                      className="absolute rounded-full bg-primary top-2 border-2 border-base-100"
+                      style={{
+                        width: `${circleSize}px`,
+                        height: `${circleSize}px`,
+                        left: `-${circleSize / 2}px`,
+                      }}
+                    />
+                    <div className="text-primary/80 mb-2">{item.year}</div>
+                    <h3 className="text-2xl font-semibold mb-1">
+                      {item.title}
+                    </h3>
+                    <div className="text-lg text-primary mb-2">
+                      {item.company}
+                    </div>
+                    <p className="text-base-content/80">{item.description}</p>
                   </div>
-                  <p className="text-base-content/80">{item.description}</p>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>
