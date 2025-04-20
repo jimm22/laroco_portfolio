@@ -12,7 +12,7 @@ const projects = [
       "Web and Mobile application marketplace to exchange agricultural waste into valuable products.",
     tech: ["Next.js", "TypeScript", "Node.js", "PostgreSQL"],
     category: "web",
-    image: "/project1.jpg",
+    image: "/Gleanify Thumbnail.png",
     link: "#",
     github: "#",
   },
